@@ -34,6 +34,28 @@ class LongestCommonSubsequence{
                 } 
                        
             }
+		
+	i=m;
+	j=n;
+	
+	StringBuffer s = new StringBuffer();
+		
+	while(i>0 && j>0){
+		if(X[i-1]==Y[j-1]){
+		    s.insert(0,Character.toString(X[i-1]));
+		    i--;
+		    j--;
+		}
+		else{
+		    if(L[i][j-1]>L[i-1][j])
+		        j--;
+		    else
+		        i--;
+		    }
+			
+	}
+	
+	System.out.println(s);
         
         return L[m][n];
 	}
